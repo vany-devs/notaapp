@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Heade from "./Heade";
 
 function Layout() {
     const [darkMode, setDarkMode] =  useState(false);
@@ -21,10 +22,16 @@ function Layout() {
 
     return (  
         <>
+            {/* Contenedor para modo oscuro */}
             <div className="min-h-screen bg-gray-200 dark:bg-gray-900 transition-colors" >
+
+                {/* Button de modo oscuro */}
                 <button onClick={toggleDarkMode} className="fixed top-6 bg-gray-100 dark:bg-gray-600 p-2 rounded-full shadow-md">
                     {darkMode ? "🌞" : "🌙"}
                 </button>
+
+                {/* Navegacion */}
+                <Heade />
             </div>
         </>
      );
