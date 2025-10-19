@@ -1,0 +1,18 @@
+{
+  "name": "notaapp",
+  "version": "1.0.0",
+  "description": "Crear notas de manera rapida y sencilla, comparte",
+  "keywords": [
+    "Nota",
+    "plantilla",
+    "rapida",
+    "prioridad"
+  ],
+  "license": "ISC",
+  "author": "Vany-devs",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
