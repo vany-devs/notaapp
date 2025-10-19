@@ -1,11 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { guardarNota } from "../../data/guardarNota";
 
 function CrearNota() {
+  // Estados de formulario
+  const [titulo, setTitulo] = useState("");
+  const [contenido, setContenido] = useState("");
   const [prioridad, setPrioridad] = useState("baja");
   const [publica, setPublica] = useState(true);
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(true);
 
+  // Manejar cambios
   const handlePrioridadChange = (e) => setPrioridad(e.target.value);
   const togglePublica = () => {
     if (usuarioRegistrado) setPublica(!publica);
@@ -27,6 +32,28 @@ function CrearNota() {
 
   const barraGradient = gradientes[publica ? "publica" : "privada"][prioridad];
 
+  // Manejar envío de formulario
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Evita recarga de página
+
+    const nuevaNota = {
+      titulo,
+      contenido,
+      prioridad,
+      publica,
+      fechaCreacion: new Date().toISOString(),
+    };
+
+    console.log("Nueva nota enviada a guardarNota:", nuevaNota);
+    guardarNota(nuevaNota);
+
+    // Limpiar formulario
+    setTitulo("");
+    setContenido("");
+    setPrioridad("baja");
+    setPublica(true);
+  };
+
   return (
     <div className="relative w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8 pt-10 transition-colors duration-500 overflow-hidden">
 
@@ -39,7 +66,7 @@ function CrearNota() {
         Crear Nueva Nota
       </h2>
 
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Título */}
         <div>
           <label
@@ -52,6 +79,8 @@ function CrearNota() {
             type="text"
             id="titulo"
             placeholder="Ej. Plan de desarrollo personal"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
             className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all"
           />
         </div>
@@ -68,6 +97,8 @@ function CrearNota() {
             id="contenido"
             rows="6"
             placeholder="Escribe tu nota aquí..."
+            value={contenido}
+            onChange={(e) => setContenido(e.target.value)}
             className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none resize-none transition-all"
           ></textarea>
         </div>
