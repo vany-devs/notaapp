@@ -28,7 +28,7 @@ function Layout() {
         <Main />
       </main>
       <footer className="py-0">
-        <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md transition-colors text-gray-600 dark:text-gray-300 text-center p-4">
+        <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md transition-colors text-gray-600 dark:text-gray-300 text-center p-1">
           <p>
             © {new Date().getFullYear()}{" "}
             <span className="font-bold bg-gradient-to-r from-sky-500 to-purple-500 text-transparent bg-clip-text">
