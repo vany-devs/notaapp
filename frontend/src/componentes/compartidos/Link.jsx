@@ -1,7 +1,9 @@
-function Links({ url, text }) {
+import { Link } from "react-router";
+
+function Links({ to, text }) {
     return ( 
         <>
-            <a href={url} className="hover:text-purple-500 dark:hover:text-sky-400 transition-colors"> {text} </a>
+            <Link to={to} className="hover:text-purple-500 dark:hover:text-sky-400 transition-colors"> {text} </Link>
         </>
      );
 }

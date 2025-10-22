@@ -10,9 +10,9 @@ function Heade({ toggleDarkMode, darkMode }) {
 
         <div className="flex items-center gap-4">
           <nav className="flex gap-6 text-gray-600 dark:text-gray-300 font-medium transition-colors">
-            <Links url="#" text="Inicio" />
-            <Links url="#" text="Nota" />
-            <Links url="#" text="Crear Nota" />
+            <Links to="/informacion" text="informacion" />
+            <Links to="/lista-notas" text="Nota" />
+            <Links to="/crear-nota" text="Crear Nota" />
           </nav>
 
           <button
