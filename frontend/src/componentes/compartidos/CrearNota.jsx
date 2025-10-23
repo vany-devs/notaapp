@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { guardarNota } from "../../data/guardarNota";
+import { useNavigate } from "react-router";
 
 function CrearNota() {
   // Estados de formulario
@@ -9,6 +10,7 @@ function CrearNota() {
   const [prioridad, setPrioridad] = useState("baja");
   const [publica, setPublica] = useState(true);
   const [usuarioRegistrado, setUsuarioRegistrado] = useState(true);
+  const navegar = useNavigate();
 
   // Manejar cambios
   const handlePrioridadChange = (e) => setPrioridad(e.target.value);
@@ -46,6 +48,7 @@ function CrearNota() {
 
     console.log("Nueva nota enviada a guardarNota:", nuevaNota);
     guardarNota(nuevaNota);
+    navegar("/lista-notas");
 
     // Limpiar formulario
     setTitulo("");
