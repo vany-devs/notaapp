@@ -43,10 +43,10 @@ function NotaCard({
         </div>
         <div className="text-right">
           <div>
-            <span className="font-medium">Creado:</span> {fechaCreacion.toLocaleDateString()}
+            <span className="font-medium">Creado:</span> {new Date(fechaCreacion).toLocaleDateString()}
           </div>
           <div>
-            <span className="font-medium">Actualizado:</span> {fechaActualizacion.toLocaleDateString()}
+            <span className="font-medium">Actualizado:</span> {new Date(fechaActualizacion).toLocaleDateString()}
           </div>
           <div>
             <span className="font-medium">Usuario:</span> {usuario || "Anónimo"}

@@ -43,7 +43,7 @@ function CrearNota() {
       contenido,
       prioridad,
       publica,
-      fechaCreacion: new Date().toISOString(),
+      fechaCreacion: new Date(),
     };
 
     console.log("Nueva nota enviada a guardarNota:", nuevaNota);

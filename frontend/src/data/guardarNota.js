@@ -4,7 +4,7 @@ export function guardarNota(nota) {
     const nuevaNota = {
         ...nota,
         id: Date.now(),
-        fechaActualizacion: new Date().toISOString(),
+        fechaActualizacion: new Date(),
     };
 
     guardarNotas(nuevaNota, !nota.publica); // Si no es pública, es privada
