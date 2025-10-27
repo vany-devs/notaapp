@@ -4,13 +4,15 @@ import { createContext, useEffect, useState } from "react";
 export const NotasContext = createContext();
 
 export function NotasProvider({ children }) {
-  const [notasPublicas, setNotasPublicas] = useState([]);
-  const [notasPrivadas, setNotasPrivadas] = useState([]);
+  const [notasPublicas, setNotasPublicas] = useState(false);
+  const [notasPrivadas, setNotasPrivadas] = useState(false);
   const [notaSeleccionada, setNotaSeleccionada] = useState(null);
+  const usuario = true; // Simulación de usuario registrado
 
   // Cargar notas al iniciar
   useEffect(() => {
     // Valida si hay sesión activa
+    if (!usuario) return;
     
     setNotasPublicas(obtenerNotasPublicas());
     setNotasPrivadas(obtenerNotasPrivadas());
