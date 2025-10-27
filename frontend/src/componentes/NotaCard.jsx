@@ -24,29 +24,42 @@ function NotaCard({
   const barraGradient = gradientes[publica ? "publica" : "privada"][prioridad];
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-6 pt-8 mb-6 transition-colors duration-500 overflow-hidden">
-      
+    <div className="relative w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-6 pt-8 mb-6 transition duration-500 overflow-hidden cursor-pointer hover:shadow-2xl hover:scale-[1.02]">
       {/* Barra superior */}
       <div
         className={`absolute top-0 left-0 w-full h-1.5 rounded-t-2xl bg-gradient-to-r ${barraGradient}`}
       />
 
       {/* Contenido */}
-      <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200">{titulo}</h3>
-      <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-line">{contenido}</p>
+      <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200">
+        {titulo}
+      </h3>
+
+      {/* Contenedor del texto con límite de altura */}
+      <div className="relative max-h-25 overflow-hidden rounded-md">
+        <p className="text-gray-700 dark:text-gray-300 mb-5 whitespace-pre-line">
+          {contenido}
+        </p>
+
+        {/* Degradado al final del texto */}
+        <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-gray-100 dark:from-gray-800 to-transparent" />
+      </div>
 
       {/* Meta información */}
-      <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+      <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-4">
         <div>
           <span className="mr-2 font-medium">Prioridad:</span> {prioridad}
-          <span className="ml-4 font-medium">Visibilidad:</span> {publica ? "Pública" : "Privada"}
+          <span className="ml-4 font-medium">Visibilidad:</span>{" "}
+          {publica ? "Pública" : "Privada"}
         </div>
         <div className="text-right">
           <div>
-            <span className="font-medium">Creado:</span> {new Date(fechaCreacion).toLocaleDateString()}
+            <span className="font-medium">Creado:</span>{" "}
+            {new Date(fechaCreacion).toLocaleDateString()}
           </div>
           <div>
-            <span className="font-medium">Actualizado:</span> {new Date(fechaActualizacion).toLocaleDateString()}
+            <span className="font-medium">Actualizado:</span>{" "}
+            {new Date(fechaActualizacion).toLocaleDateString()}
           </div>
           <div>
             <span className="font-medium">Usuario:</span> {usuario || "Anónimo"}
