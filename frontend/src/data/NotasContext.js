@@ -12,7 +12,7 @@ export function NotasProvider({ children }) {
   // Cargar notas al iniciar
   useEffect(() => {
     // Valida si hay sesión activa
-    if (!usuario) return;
+    // if (!usuario) return;
     
     setNotasPublicas(obtenerNotasPublicas());
     setNotasPrivadas(obtenerNotasPrivadas());
