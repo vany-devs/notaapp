@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router'
 import './App.css'
+import Informacion from './componentes/publico/paginas/Info'
+import ListaNotas from './componentes/publico/paginas/ListaNotas'
 import Layout from './componentes/Layout'
-import Informacion from './componentes/Info'
-import CrearNota from './componentes/compartidos/CrearNota'
-import ListaNotas from './componentes/ListaNotas'
+import CrearNota from './componentes/publico/paginas/CrearNota'
 
 function App() {
 

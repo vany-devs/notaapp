@@ -1,5 +1,5 @@
-import { obtenerNotas } from "../data/localst";
-import NotaCard from "./NotaCard";
+import { obtenerNotas } from "../../../data/localst";
+import NotaCard from "./utils/NotaCard";
 
 function ListaNotas() {
   const nota = [];

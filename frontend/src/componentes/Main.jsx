@@ -1,7 +1,4 @@
 import { Outlet } from "react-router";
-import CrearNota from "./compartidos/CrearNota";
-import Informacion from "./Info";
-import ListaNotas from "./ListaNotas";
 
 function Main() {
   return (

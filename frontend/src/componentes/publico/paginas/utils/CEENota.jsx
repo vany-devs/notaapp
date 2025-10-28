@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { guardarNota } from "../../data/guardarNota";
 import { useNavigate } from "react-router";
+import { guardarNotas } from "../../../../data/localst";
 
-function CrearNota() {
+function CEENota() {
   // Estados de formulario
   const [titulo, setTitulo] = useState("");
   const [contenido, setContenido] = useState("");
@@ -47,7 +47,7 @@ function CrearNota() {
     };
 
     console.log("Nueva nota enviada a guardarNota:", nuevaNota);
-    guardarNota(nuevaNota);
+    guardarNotas(nuevaNota);
     navegar("/lista-notas");
 
     // Limpiar formulario
@@ -166,4 +166,4 @@ function CrearNota() {
   );
 }
 
-export default CrearNota;
+export default CEENota;

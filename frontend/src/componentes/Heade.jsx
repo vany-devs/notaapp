@@ -1,4 +1,4 @@
-import Links from "./compartidos/Link";
+import Links from "./publico/paginas/utils/Link";
 
 function Heade({ toggleDarkMode, darkMode }) {
   return (
