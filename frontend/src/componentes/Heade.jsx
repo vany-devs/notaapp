@@ -14,6 +14,7 @@ function Heade({ toggleDarkMode, darkMode }) {
             <Links to="/lista-notas" text="Nota" />
             <Links to="/crear-nota" text="Crear Nota" />
             <Links to="/registro" text="Registro" />
+            <Links to="/login" text="Sesión" />
           </nav>
 
           <button
