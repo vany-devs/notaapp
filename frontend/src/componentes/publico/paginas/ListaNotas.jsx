@@ -5,8 +5,6 @@ function ListaNotas() {
   const nota = [];
   const usuario = true; // Simulación de usuario registrado
 
-  // Si no hay notas privadas o publicas mostrar mensaje
-
   if (usuario) {
     const notasPrivadas = obtenerNotas(false);
     const notasPublicas = obtenerNotas(true);
@@ -17,6 +15,8 @@ function ListaNotas() {
     nota.push(...notasPublicas);
   }
 
+  // Si no hay notas privadas o publicas mostrar mensaje
+  
   if (nota.length === 0) {
     return <p className="text-center mx-auto text-gray-900 dark:text-gray-200">No hay notas disponibles.</p>;
   }

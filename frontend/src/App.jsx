@@ -4,6 +4,7 @@ import Informacion from './componentes/publico/paginas/Info'
 import ListaNotas from './componentes/publico/paginas/ListaNotas'
 import Layout from './componentes/Layout'
 import CrearNota from './componentes/publico/paginas/CrearNota'
+import Registro from './componentes/publico/registro/Registro'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="informacion" element={<Informacion />} />
           <Route path="lista-notas" element={<ListaNotas />} />
           <Route path="crear-nota" element={ <CrearNota /> } />
+          <Route path="registro" element={ <Registro /> } />
         </Route>
       </Routes>
     </>

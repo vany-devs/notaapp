@@ -1,6 +1,6 @@
 function Informacion() {
   return (
-    <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
+    <div className="w-fulltext-gray-700 dark:text-gray-300 leading-relaxed">
       <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">
         📝 Bienvenido a Vany Notes
       </h1>
